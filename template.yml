@@ -217,6 +217,8 @@ Resources:
     Type: AWS::AutoScaling::ScheduledAction
     Properties:
       AutoScalingGroupName: !Ref MinticASG
+      MinSize: 0
+      MaxSize: 0
       DesiredCapacity: 0
       Recurrence: "0 13 * * *"   # 8:00 AM Colombia
 
@@ -225,6 +227,8 @@ Resources:
     Type: AWS::AutoScaling::ScheduledAction
     Properties:
       AutoScalingGroupName: !Ref MinticASG
+      MinSize: 4
+      MaxSize: 4
       DesiredCapacity: 4
       Recurrence: "15 13 * * *"  # 8:15 AM Colombia
 
