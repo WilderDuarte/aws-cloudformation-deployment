@@ -11,7 +11,7 @@ Resources:
         ImageId: ami-0f88e80871fd81e91  # Puedes parametrizar si quieres
         InstanceType: t2.micro
         SecurityGroupIds:
-          - !ImportValue MinticSecurityGroupId  # Importa el SG exportado desde Security Stack
+          - !ImportValue Mintic-SecurityGroupId  # Importa el SG exportado desde Security Stack
         UserData:
           Fn::Base64: !Sub |
             #!/bin/bash
@@ -26,8 +26,8 @@ Resources:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
       VPCZoneIdentifier:
-        - !ImportValue MinticPublicSubnet1Id   # Importa desde VPC stack
-        - !ImportValue MinticPublicSubnet2Id
+        - !ImportValue Mintic-SubnetPublic1   # Importa desde VPC stack
+        - !ImportValue Mintic-SubnetPublic2
       LaunchTemplate:
         LaunchTemplateId: !Ref MinticLaunchTemplate
         Version: !GetAtt MinticLaunchTemplate.LatestVersionNumber

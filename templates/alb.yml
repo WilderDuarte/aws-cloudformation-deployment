@@ -9,10 +9,10 @@ Resources:
     Properties:
       Name: MinticALB
       Subnets:
-        - !ImportValue MinticPublicSubnet1Id  # Importa desde VPC stack
-        - !ImportValue MinticPublicSubnet2Id
+        - !ImportValue Mintic-SubnetPublic1  # Importa desde VPC stack
+        - !ImportValue Mintic-SubnetPublic2
       SecurityGroups:
-        - !ImportValue MinticSecurityGroupId  # Importa desde Security stack
+        - !ImportValue Mintic-SecurityGroupId  # Importa desde Security stack
       Scheme: internet-facing
       Type: application
 
@@ -20,7 +20,7 @@ Resources:
   MinticTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      VpcId: !ImportValue MinticVPCId  # Importa la VPC desde VPC stack
+      VpcId: !ImportValue Mintic-VPCId  # Importa la VPC desde VPC stack
       Protocol: HTTP
       Port: 80
       TargetType: instance
