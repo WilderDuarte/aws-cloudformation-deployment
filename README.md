@@ -1,2 +1,2 @@
 # aws-cloudformation-deployment
-Proyecto que realiza un despliegue automatizado de una plantilla en aws con cloudformation.
+Proyecto que realiza un despliegue automatizado con diferentes plantillas en aws con cloudformation.
