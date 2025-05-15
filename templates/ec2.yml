@@ -18,7 +18,7 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: true
           SubnetId:
-            Fn::ImportValue: Mintic-PublicSubnet1
+            Fn::ImportValue: Mintic-SubnetPublic1
           DeviceIndex: 0
           GroupSet:
             - Fn::ImportValue: Mintic-SecurityGroupId
@@ -40,7 +40,7 @@ Resources:
       NetworkInterfaces:
         - AssociatePublicIpAddress: true
           SubnetId:
-            Fn::ImportValue: Mintic-PublicSubnet2
+            Fn::ImportValue: Mintic-SubnetPublic2
           DeviceIndex: 0
           GroupSet:
             - Fn::ImportValue: Mintic-SecurityGroupId
